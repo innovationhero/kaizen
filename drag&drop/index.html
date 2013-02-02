@@ -1,0 +1,32 @@
+<!-- https://github.com/danielzen/angular-jquery-ui -->
+  <title>AngularJS Plunker</title>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery-ui.css">
+  <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+  <script src="https://raw.github.com/twitter/bootstrap/master/docs/assets/js/bootstrap.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js"></script>
+  <script src="angular-ui.js"></script>
+  <script src="sortable.js"></script>
+
+  <script src="app.js"></script>
+<div ng-app="jquiModule" ng-controller="DndDemo" style="display:none"
+ng-show="true">
+
+<h1>jQuery UI Drag and Drop Demo</h1>
+
+    <div jqui-drop-accept="acceptToken(list1, $token)" jqui-drop-commit="commitToken(list1, $token)">
+         <h2>Drag these boxes</h2>
+
+        <div ng-repeat="item in list1" jqui-drag-start="dragStart(item, list1)"
+        jqui-drag-end="dragEnd(item)">{{item.name}} {{item.dragging}}</div>
+    </div>
+    <div jqui-drop-accept="acceptToken(list2, $token)" jqui-drop-commit="commitToken(list2, $token)">
+         <h2>Drop them here</h2>
+
+        <div ng-repeat="item in list2" jqui-drag-start="dragStart(item, list2)"
+        jqui-drag-end="dragEnd(item)">{{item.name}} {{item.dragging}}</div>
+    </div>
+</div>
